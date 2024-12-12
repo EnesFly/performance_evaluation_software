@@ -22,10 +22,23 @@ const DashboardPage = () => {
       const storedDatabase = localStorage.getItem('database');
       const currentDatabase = storedDatabase ? JSON.parse(storedDatabase) : database;
 
-      const filteredUsers = currentDatabase.users.filter(u => positionRank[u.position] < positionRank[user.position]);
+      const filteredUsers = currentDatabase.users
+        .filter(u => positionRank[u.position] < positionRank[user.position])
+        .map(user => ({
+          ...user,
+          latest_evaluation_score: calculateLatestEvaluationScore(user.evaluations)
+        }));
+
       setInferiorUsers(filteredUsers);
     }
   }, []);
+
+  const calculateLatestEvaluationScore = (evaluations) => {
+    if (!evaluations || evaluations.length === 0) return 0;
+    const latestEvaluation = evaluations
+      .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0];
+    return latestEvaluation ? latestEvaluation.overall_score : 0;
+  };
 
   const handleViewHistory = (user) => {
     navigate('/history', { state: { user } });
