@@ -13,7 +13,8 @@ const LoginPage = () => {
     const user = users.find(user => user.email === email && user.password === password);
 
     if (user) {
-      navigate('/success');
+      localStorage.setItem('loggedInUser', JSON.stringify(user)); // Store the logged-in user in localStorage
+      navigate('/dashboard');
     } else {
       setError('Invalid email or password.');
     }

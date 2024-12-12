@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
-import SuccessPage from './pages/SuccessPage';
+import DashboardPage from './pages/DashboardPage';
 import Header from './components/Header';
-import './styles/global.css'; // Import global CSS
+import './styles/global.css';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </Router>
   );
