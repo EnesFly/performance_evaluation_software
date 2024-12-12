@@ -1,0 +1,33 @@
+[
+    {
+      "name": "David Thomas",
+      "position": "Supervisor",
+      "email": "david.thomas@demo.com",
+      "password": "123"
+    },
+    {
+      "name": "Michael Jackson",
+      "position": "Supervisor",
+      "email": "michael.jackson@demo.com",
+      "password": "123"
+    },
+    {
+      "name": "Olivia Martinez",
+      "position": "Manager",
+      "email": "olivia.martinez@test.com",
+      "password": "123"
+    },
+    {
+      "name": "Alex Martinez",
+      "position": "Employee",
+      "email": "alex.martinez@example.com",
+      "password": "123"
+    },
+    {
+      "name": "Sarah Taylor",
+      "position": "Manager",
+      "email": "sarah.taylor@demo.com",
+      "password": "123"
+    }
+  ]
+  
