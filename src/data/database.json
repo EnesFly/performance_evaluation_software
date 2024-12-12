@@ -1,33 +1,205 @@
-[
-    {
-      "name": "David Thomas",
-      "position": "Supervisor",
-      "email": "david.thomas@demo.com",
-      "password": "123"
-    },
-    {
-      "name": "Michael Jackson",
-      "position": "Supervisor",
-      "email": "michael.jackson@demo.com",
-      "password": "123"
-    },
-    {
-      "name": "Olivia Martinez",
-      "position": "Manager",
-      "email": "olivia.martinez@test.com",
-      "password": "123"
-    },
-    {
-      "name": "Alex Martinez",
-      "position": "Employee",
-      "email": "alex.martinez@example.com",
-      "password": "123"
-    },
-    {
-      "name": "Sarah Taylor",
-      "position": "Manager",
-      "email": "sarah.taylor@demo.com",
-      "password": "123"
+{
+    "users": [
+        {
+            "name": "David Thomas",
+            "position": "Supervisor",
+            "email": "david.thomas@demo.com",
+            "password": "123",
+            "evaluations": [
+                {
+                    "timestamp": "2024-05-19 22:51:29",
+                    "overall_score": 22.0,
+                    "KPI1_score": 7,
+                    "KPI2_score": 4,
+                    "KPI3_score": 7,
+                    "KPI4_score": 2,
+                    "KPI5_score": 1
+                },
+                {
+                    "timestamp": "2024-02-21 22:51:29",
+                    "overall_score": 29.5,
+                    "KPI1_score": 7,
+                    "KPI2_score": 6,
+                    "KPI3_score": 6,
+                    "KPI4_score": 3,
+                    "KPI5_score": 6
+                },
+                {
+                    "timestamp": "2024-09-11 22:51:29",
+                    "overall_score": 25.5,
+                    "KPI1_score": 1,
+                    "KPI2_score": 7,
+                    "KPI3_score": 7,
+                    "KPI4_score": 2,
+                    "KPI5_score": 6
+                }
+            ],
+            "latest_evaluation_score": 25.5
+        },
+        {
+            "name": "Michael Jackson",
+            "position": "Supervisor",
+            "email": "michael.jackson@demo.com",
+            "password": "123",
+            "evaluations": [
+                {
+                    "timestamp": "2024-04-23 22:51:29",
+                    "overall_score": 22.5,
+                    "KPI1_score": 1,
+                    "KPI2_score": 7,
+                    "KPI3_score": 3,
+                    "KPI4_score": 4,
+                    "KPI5_score": 6
+                },
+                {
+                    "timestamp": "2024-03-13 22:51:29",
+                    "overall_score": 13.0,
+                    "KPI1_score": 1,
+                    "KPI2_score": 1,
+                    "KPI3_score": 7,
+                    "KPI4_score": 5,
+                    "KPI5_score": 1
+                },
+                {
+                    "timestamp": "2024-12-04 22:51:29",
+                    "overall_score": 21.5,
+                    "KPI1_score": 3,
+                    "KPI2_score": 4,
+                    "KPI3_score": 5,
+                    "KPI4_score": 3,
+                    "KPI5_score": 6
+                }
+            ],
+            "latest_evaluation_score": 21.5
+        },
+        {
+            "name": "Olivia Martinez",
+            "position": "Manager",
+            "email": "olivia.martinez@test.com",
+            "password": "123",
+            "evaluations": [
+                {
+                    "timestamp": "2024-12-06 22:51:29",
+                    "overall_score": 12.5,
+                    "KPI1_score": 1,
+                    "KPI2_score": 2,
+                    "KPI3_score": 4,
+                    "KPI4_score": 7,
+                    "KPI5_score": 1
+                },
+                {
+                    "timestamp": "2024-07-27 22:51:29",
+                    "overall_score": 18.0,
+                    "KPI1_score": 1,
+                    "KPI2_score": 2,
+                    "KPI3_score": 5,
+                    "KPI4_score": 6,
+                    "KPI5_score": 6
+                },
+                {
+                    "timestamp": "2024-01-26 22:51:29",
+                    "overall_score": 17.5,
+                    "KPI1_score": 6,
+                    "KPI2_score": 2,
+                    "KPI3_score": 6,
+                    "KPI4_score": 3,
+                    "KPI5_score": 1
+                }
+            ],
+            "latest_evaluation_score": 12.5
+        },
+        {
+            "name": "Alex Martinez",
+            "position": "Employee",
+            "email": "alex.martinez@example.com",
+            "password": "123",
+            "evaluations": [
+                {
+                    "timestamp": "2024-03-01 22:51:29",
+                    "overall_score": 18.5,
+                    "KPI1_score": 7,
+                    "KPI2_score": 3,
+                    "KPI3_score": 3,
+                    "KPI4_score": 2,
+                    "KPI5_score": 3
+                },
+                {
+                    "timestamp": "2024-01-05 22:51:29",
+                    "overall_score": 24.0,
+                    "KPI1_score": 3,
+                    "KPI2_score": 6,
+                    "KPI3_score": 5,
+                    "KPI4_score": 6,
+                    "KPI5_score": 4
+                },
+                {
+                    "timestamp": "2024-08-07 22:51:29",
+                    "overall_score": 25.0,
+                    "KPI1_score": 5,
+                    "KPI2_score": 6,
+                    "KPI3_score": 5,
+                    "KPI4_score": 4,
+                    "KPI5_score": 4
+                },
+                {
+                    "timestamp": "2024-05-26 22:51:29",
+                    "overall_score": 24.5,
+                    "KPI1_score": 7,
+                    "KPI2_score": 4,
+                    "KPI3_score": 3,
+                    "KPI4_score": 5,
+                    "KPI5_score": 6
+                }
+            ],
+            "latest_evaluation_score": 25.0
+        },
+        {
+            "name": "Sarah Taylor",
+            "position": "Manager",
+            "email": "sarah.taylor@demo.com",
+            "password": "123",
+            "evaluations": [
+                {
+                    "timestamp": "2023-12-17 22:51:29",
+                    "overall_score": 16.0,
+                    "KPI1_score": 1,
+                    "KPI2_score": 4,
+                    "KPI3_score": 5,
+                    "KPI4_score": 4,
+                    "KPI5_score": 2
+                },
+                {
+                    "timestamp": "2024-07-02 22:51:29",
+                    "overall_score": 16.5,
+                    "KPI1_score": 2,
+                    "KPI2_score": 6,
+                    "KPI3_score": 2,
+                    "KPI4_score": 5,
+                    "KPI5_score": 1
+                },
+                {
+                    "timestamp": "2024-08-08 22:51:29",
+                    "overall_score": 18.0,
+                    "KPI1_score": 5,
+                    "KPI2_score": 2,
+                    "KPI3_score": 4,
+                    "KPI4_score": 2,
+                    "KPI5_score": 5
+                }
+            ],
+            "latest_evaluation_score": 18.0
+        }
+    ],
+    "kpis": {
+        "KPI1_title": "Number of contracts signed per quarter.",
+        "KPI1_weight": 1.0,
+        "KPI2_title": "Dollar value for new contracts signed per period.",
+        "KPI2_weight": 1.5,
+        "KPI3_title": "Number of qualified leads per month.",
+        "KPI3_weight": 1.0,
+        "KPI4_title": "Number of engaged qualified leads in the sales funnel.",
+        "KPI4_weight": 0.5,
+        "KPI5_title": "Hours of resources spent on sales follow up.",
+        "KPI5_weight": 1.0
     }
-  ]
-  
+}

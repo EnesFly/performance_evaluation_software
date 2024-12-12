@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import users from '../data/database.json';
+import database from '../data/database.json'; // Import the whole database
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +10,8 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const user = users.find(user => user.email === email && user.password === password);
+    // Use the "users" array from the database, not the whole object
+    const user = database.users.find(user => user.email === email && user.password === password);
 
     if (user) {
       localStorage.setItem('loggedInUser', JSON.stringify(user)); // Store the logged-in user in localStorage

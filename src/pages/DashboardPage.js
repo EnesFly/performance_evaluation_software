@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import users from '../data/database.json';
+import database from '../data/database.json'; // Import the whole database
 
 const positionRank = {
   'Manager': 3,
@@ -12,14 +12,13 @@ const DashboardPage = () => {
   const [inferiorUsers, setInferiorUsers] = useState([]);
 
   useEffect(() => {
-    // Get the logged-in user from localStorage
     const userData = localStorage.getItem('loggedInUser');
     if (userData) {
       const user = JSON.parse(userData);
       setLoggedInUser(user);
       
-      // Filter users with inferior positions
-      const filteredUsers = users.filter(u => positionRank[u.position] < positionRank[user.position]);
+      // Use the "users" array from the database, not the whole object
+      const filteredUsers = database.users.filter(u => positionRank[u.position] < positionRank[user.position]);
       setInferiorUsers(filteredUsers);
     }
   }, []);
@@ -33,9 +32,16 @@ const DashboardPage = () => {
       <ul>
         {inferiorUsers.map((user, index) => (
           <li key={index} className="user-item">
-            <span>{user.name} - {user.position}</span>
-            <button className="history-button">History</button>
-            <button className="evaluation-button">Add New Evaluation</button>
+            <div className="user-info">
+              <span>{user.name} - {user.position}</span>
+              <div className="evaluation-score-box">
+                {user.latest_evaluation_score.toFixed(2)}
+              </div>
+            </div>
+            <div className="user-actions">
+              <button className="history-button">History</button>
+              <button className="evaluation-button">Add New Evaluation</button>
+            </div>
           </li>
         ))}
       </ul>
