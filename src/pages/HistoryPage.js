@@ -17,7 +17,40 @@ const HistoryPage = () => {
   return (
     <div className="container">
       <h1>{user.name}'s Evaluation History</h1>
+
       <button onClick={() => navigate('/dashboard')} className="back-button">Back to Dashboard</button>
+
+      <h2>Key Performance Indicators (KPIs) and Weights</h2>
+      <table className="kpi-table">
+        <thead>
+          <tr>
+            <th>KPI</th>
+            <th>Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{kpis.KPI1_title}</td>
+            <td>{kpis.KPI1_weight}x</td>
+          </tr>
+          <tr>
+            <td>{kpis.KPI2_title}</td>
+            <td>{kpis.KPI2_weight}x</td>
+          </tr>
+          <tr>
+            <td>{kpis.KPI3_title}</td>
+            <td>{kpis.KPI3_weight}x</td>
+          </tr>
+          <tr>
+            <td>{kpis.KPI4_title}</td>
+            <td>{kpis.KPI4_weight}x</td>
+          </tr>
+          <tr>
+            <td>{kpis.KPI5_title}</td>
+            <td>{kpis.KPI5_weight}x</td>
+          </tr>
+        </tbody>
+      </table>
 
       {user.evaluations.length > 0 ? (
         <ul className="evaluation-list">
