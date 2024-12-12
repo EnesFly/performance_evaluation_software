@@ -130,3 +130,47 @@ button:hover {
 button:hover {
   opacity: 0.9;
 }
+
+.evaluation-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.evaluation-item {
+  background-color: #f4f4f9;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.evaluation-item h3 {
+  margin-bottom: 10px;
+}
+
+.evaluation-item p {
+  margin-bottom: 10px;
+}
+
+.evaluation-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.evaluation-item ul li {
+  margin-bottom: 5px;
+}
+
+.back-button {
+  background-color: #e63946;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background-color: #d62828;
+}

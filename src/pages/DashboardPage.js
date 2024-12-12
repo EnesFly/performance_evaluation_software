@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import database from '../data/database.json'; // Import the whole database
 
 const positionRank = {
@@ -10,6 +11,7 @@ const positionRank = {
 const DashboardPage = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [inferiorUsers, setInferiorUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userData = localStorage.getItem('loggedInUser');
@@ -22,6 +24,10 @@ const DashboardPage = () => {
       setInferiorUsers(filteredUsers);
     }
   }, []);
+
+  const handleViewHistory = (user) => {
+    navigate('/history', { state: { user } });
+  };
 
   return (
     <div className="container">
@@ -39,7 +45,7 @@ const DashboardPage = () => {
               </div>
             </div>
             <div className="user-actions">
-              <button className="history-button">History</button>
+              <button className="history-button" onClick={() => handleViewHistory(user)}>History</button>
               <button className="evaluation-button">Add New Evaluation</button>
             </div>
           </li>
