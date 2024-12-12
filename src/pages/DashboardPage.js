@@ -19,14 +19,20 @@ const DashboardPage = () => {
       const user = JSON.parse(userData);
       setLoggedInUser(user);
       
-      // Use the "users" array from the database, not the whole object
-      const filteredUsers = database.users.filter(u => positionRank[u.position] < positionRank[user.position]);
+      const storedDatabase = localStorage.getItem('database');
+      const currentDatabase = storedDatabase ? JSON.parse(storedDatabase) : database;
+
+      const filteredUsers = currentDatabase.users.filter(u => positionRank[u.position] < positionRank[user.position]);
       setInferiorUsers(filteredUsers);
     }
   }, []);
 
   const handleViewHistory = (user) => {
     navigate('/history', { state: { user } });
+  };
+
+  const handleAddEvaluation = (user) => {
+    navigate('/new-evaluation', { state: { user } });
   };
 
   return (
@@ -46,7 +52,7 @@ const DashboardPage = () => {
             </div>
             <div className="user-actions">
               <button className="history-button" onClick={() => handleViewHistory(user)}>History</button>
-              <button className="evaluation-button">Add New Evaluation</button>
+              <button className="evaluation-button" onClick={() => handleAddEvaluation(user)}>Add New Evaluation</button>
             </div>
           </li>
         ))}

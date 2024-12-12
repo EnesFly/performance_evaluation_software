@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import database from '../data/database.json';
 
@@ -7,16 +7,25 @@ const HistoryPage = () => {
   const navigate = useNavigate();
   const { user } = location.state || {};
 
-  if (!user) {
-    navigate('/dashboard');
-    return null;
-  }
+  const [currentUser, setCurrentUser] = useState(null);
+  const [kpis, setKpis] = useState(database.kpis);
 
-  const kpis = database.kpis;
+  useEffect(() => {
+    const storedDatabase = localStorage.getItem('database');
+    const currentDatabase = storedDatabase ? JSON.parse(storedDatabase) : database;
+
+    const updatedUser = currentDatabase.users.find(u => u.email === user.email);
+    setCurrentUser(updatedUser);
+    setKpis(currentDatabase.kpis);
+  }, [user.email]);
+
+  if (!currentUser) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="container">
-      <h1>{user.name}'s Evaluation History</h1>
+      <h1>{currentUser.name}'s Evaluation History</h1>
 
       <button onClick={() => navigate('/dashboard')} className="back-button">Back to Dashboard</button>
 
@@ -52,20 +61,20 @@ const HistoryPage = () => {
         </tbody>
       </table>
 
-      {user.evaluations.length > 0 ? (
+      {currentUser.evaluations.length > 0 ? (
         <ul className="evaluation-list">
-          {user.evaluations
+          {currentUser.evaluations
             .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
             .map((evaluation, index) => (
               <li key={index} className="evaluation-item">
                 <h3>Evaluation on {evaluation.timestamp}</h3>
                 <p><strong>Overall Score:</strong> {evaluation.overall_score}</p>
                 <ul>
-                  <li><strong>{kpis.KPI1_title}:</strong> {evaluation.KPI1_score}</li>
-                  <li><strong>{kpis.KPI2_title}:</strong> {evaluation.KPI2_score}</li>
-                  <li><strong>{kpis.KPI3_title}:</strong> {evaluation.KPI3_score}</li>
-                  <li><strong>{kpis.KPI4_title}:</strong> {evaluation.KPI4_score}</li>
-                  <li><strong>{kpis.KPI5_title}:</strong> {evaluation.KPI5_score}</li>
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <li key={i}>
+                      <strong>{kpis[`KPI${i + 1}_title`]}:</strong> {evaluation[`KPI${i + 1}_score`]}
+                    </li>
+                  ))}
                 </ul>
               </li>
           ))}
